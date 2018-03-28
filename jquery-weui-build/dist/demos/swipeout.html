@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery WeUI</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+<link rel="stylesheet" href="../lib/weui.min.css">
+<link rel="stylesheet" href="../css/jquery-weui.css">
+<link rel="stylesheet" href="css/demos.css">
+
+  </head>
+
+  <body ontouchstart>
+
+
+    <header class='demos-header'>
+      <h1 class="demos-title">滑动删除</h1>
+    </header>
+
+    <div class="bd">
+      <div class="page__bd">
+        <div class="weui-cells">
+          <!--<div class="weui-cell weui-cell_swiped weui-cells_checkbox" id="swipe1">
+            <div class="weui-cell__bd">
+              <div class="weui-cell">
+              	<label class="weui-cell weui-check__label" for="s11">
+              	<div class="weui-cell__hd">
+	        		<input type="checkbox" class="weui-check" name="checkbox1" id="s11">
+	            	<i class="weui-icon-checked"></i>
+	          	</div>
+                <div class="weui-cell__bd">
+                  <p>左滑列表</p>
+                  <h3>废报纸</h3>
+	            	<p>数量:50kg</p>
+	            	<p>单价:0.50元/kg</p>
+                </div>
+                <div class="weui-cell__ft"><p>预估价：¥40.00</p></div>
+                </label>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+            </div>
+          </div>-->
+          <!--<label class="weui-cell weui-check__label" for="s11">
+	        	<div class="weui-cell__hd">
+	        		<input type="checkbox" class="weui-check" name="checkbox1" id="s11">
+	            	<i class="weui-icon-checked"></i>
+	          	</div>
+	          	<div class="weui-cell__bd">
+	          		<h3>废报纸</h3>
+	            	<p>数量:50kg</p>
+	            	<p>单价:0.50元/kg</p>
+	          	</div>
+	          	<div class="weui-cell__ft">
+	          		<p>预估价：¥40.00</p>
+            	</div>
+	        </label>-->
+          <div class="weui-cell weui-cell_swiped">
+            <div class="weui-cell__bd">
+              <div class="weui-cell">
+                <div class="weui-cell__bd">
+                  <p>左滑列表</p>
+                </div>
+                <div class="weui-cell__ft">向左滑动试试</div>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+            </div>
+          </div>
+          <div class="weui-cell">
+            <div class="weui-cell__bd">
+              <div class="weui-cell">
+                <div class="button_sp_area" style="text-align: center;">
+				          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" id="open">打开第一个</a>
+				          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default" id="close">关闭第一个</a>
+				        </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="button_sp_area" style="text-align: center;">
+          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" id="open">打开第一个</a>
+          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default" id="close">关闭第一个</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="weui-cell weui-cell_swiped weui-cells_checkbox" id="swipe1">
+          			<div class="weui-cell__bd">
+              	<label class="weui-cell weui-check__label" for="s11">
+              	<div class="weui-cell__hd">
+	        		<input type="checkbox" class="weui-check" name="checkbox1" id="s11">
+	            	<i class="weui-icon-checked"></i>
+	          	</div>
+                <div class="weui-cell__bd">
+                	<h3>废报纸</h3>
+	            		<p>数量:50kg</p>
+	            		<p>单价:0.50元/kg</p>
+                </div>
+                <div class="weui-cell__ft"><p>预估价：¥40.00</p></div>
+               </label>
+							</div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+              <a class="weui-swiped-btn weui-swiped-btn_default close-swipeout" href="javascript:">关闭</a>
+            </div>
+          </div>
+          
+    <div class="button_sp_area" style="text-align: center;">
+          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">全选</a>
+          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">下一步</a>
+    </div>
+    
+    <div class="weui-cell" style="position: fixed;bottom: 53px; width: 100%;background-color: #10AEFF;">
+            <div class="weui-cell__bd">
+              <div class="weui-cell">
+                <div class="button_sp_area" style="position: fixed;left: 20px; margin-top: 3px;">
+				          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">全选</a>
+				        </div>
+				        <div class="button_sp_area" style="position: fixed;right: 20px; margin-top: 3px;"> 
+				          <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">下一步</a>
+				        </div>
+              </div>
+            </div>
+          </div>
+    <!--<div class="weui-cell weui-cells_checkbox">
+            <div class="weui-cell__bd">
+              <div class="weui-cell">
+              	<label class="weui-cell weui-check__label" for="s15">
+              	<div class="weui-cell__hd">
+	        		<input type="checkbox" class="weui-check" name="checkbox1" id="s15">
+	            	<i class="weui-icon-checked"></i>
+	          	</div>
+                <div class="weui-cell__bd">
+                  <p>全选</p>
+                </div>
+                </label>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+        		<a href="javascript:;" class="weui-btn weui-btn_primary">主按钮</a>
+            </div>
+          </div>-->
+    <script src="../lib/jquery-2.1.4.js"></script>
+<script src="../lib/fastclick.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+<script src="../js/jquery-weui.js"></script>
+
+
+    <script>
+      $('.delete-swipeout').click(function () {
+        $(this).parents('.weui-cell').remove()
+      })
+      $('.close-swipeout').click(function () {
+        $(this).parents('.weui-cell').swipeout('close')
+      })
+      $("#open").click( function () { $("#swipe1").swipeout('open') })
+      $("#close").click( function () { $("#swipe1").swipeout('close') })
+      //$("#swipe1").click( function () { console.log('click') })
+    </script>
+  </body>
+</html>
