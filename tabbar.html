@@ -35,51 +35,51 @@
 		<script src="jquery-weui-build/dist/js/jquery-weui.min.js"></script>
 		<script src="jquery-weui-build/dist/js/swiper.min.js"></script>
 		<script src="jquery-weui-build/dist/lib/fastclick.js"></script>
-		<script>
-			$("#tab1").load("main.html");
-			$("#tab2").load("feipinkuang.html");
-		</script>
-		<script>
-	    	var iSelect = true;
-	    	$(document).on("click", "#allcheck", function() {
-	    		var ck = document.getElementsByClassName("weui-check");
-	              			for (var i = 0; i <= ck.length-1; i++){
-	              				if(ck[i].checked != true)
-	              				{
-	              					iSelect = true;
-	              					break;
-	              				}
-	              				iSelect = false;
-	              			}
-							if (iSelect === true){
-								for (var i = 0; i <= ck.length-1; i++){
-              						ck[i].checked = true;
-              					}
-								iSelect = false;
-							}else if (iSelect === false){
-								for (var i = 0; i <= ck.length-1; i++){
-              						ck[i].checked = false;
-              					}
-								iSelect = true;
+                    <script>
+                        $("#tab1").load("main.php");
+                        $("#tab2").load("feipinkuang.html");
+                        var iSelect = true;
+                        $(document).on("click", "#allcheck", function() {
+                            var ck = document.getElementsByClassName("weui-check");
+                            for (var i = 0; i <= ck.length-1; i++){
+                                if(ck[i].checked != true)
+                                {
+                                    iSelect = true;
+                                    break;
+                                }
+                                iSelect = false;
+                            }
+                            if (iSelect === true){
+                                for (var i = 0; i <= ck.length-1; i++){
+                                    ck[i].checked = true;
+                                }
+                                iSelect = false;
+                            }else if (iSelect === false){
+                                for (var i = 0; i <= ck.length-1; i++){
+                                    ck[i].checked = false;
+                                }
+                                iSelect = true;
+                            }
+                        });
+						$(document).on("click", "#continue", function() {
+							for (var i = 0; i < $(".weui-check").length; i++ ){
+								if($(".weui-check").get(i).checked == true){
+//									console.log($(".weui-check").get(i).checked);
+//									console.log($(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML);
+                                    var sessionkey = $(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML;
+                                    var sessionval = localStorage.getItem($(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML);
+//                                    console.log(localStorage.getItem($(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML));
+									sessionStorage.setItem(sessionkey,sessionval);
+								}
 							}
-	    	});
-	    
-			var obj = {h3:['废金属'],p:['单价：0.50元/kg']};
-			var str = JSON.stringify(obj);
-			var store;
-			function save()
-			{
-				localStorage.setItem("feipin", str);
-				alert("保存成功！");
-			}
-			
-			function get()
-			{
-				
-				store = localStorage.getItem("feipin");
-				//msg.value = JSON.parse(store);
-				console.log(JSON.parse(store).h3[0]);
-			}
-	    </script>
+						});
+
+                    </script>
+                    <script>
+                        $(function() {
+                            FastClick.attach(document.body);
+                        });
+
+                    </script>
 	</body>
 </html>
