@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>订单界面</title>
+    <link rel="stylesheet" type="text/css" href="jquery-weui-build/dist/lib/weui.min.css">
+	<link rel="stylesheet" type="text/css" href="jquery-weui-build/dist/css/jquery-weui.min.css">
+    <style type="text/css">
+        body {
+            background-color: #F8F8F8
+        }
+    </style>
+</head>
+</head>
+<body>
+<div class="weui-cells">
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>请填写订单信息</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+    </div>
+</div>
+<div style="color: #F8F8F8;height: 20px;width: 100%;"></div>
+<div class="weui-form-preview">
+    <div class="weui-cell">
+        <div class="weui-cell__hd">
+            <label class="weui-label">真实姓名</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input id="name" class="weui-input" name="realname" type="text" placeholder="请输入姓名">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+        <div class="weui-cell__bd"><input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入手机号"></div>
+    </div>
+    <div class="weui-cell" >
+        <div class="weui-cell__hd"><label class="weui-label" >家庭住址</label></div>
+        <div class="weui-cell__bd"><input class="weui-input" name="wechat-number" type="text" placeholder="请输入住址"></div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd" >
+            <textarea class="weui-textarea" placeholder="备注" rows="3" ></textarea>
+            <div class="weui-textarea-counter"><span>0</span>/50</div>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-area"><a class="weui-btn weui-btn_primary confirm" onclick="check()">提交订单</a></div>
+<script src="jquery-weui-build/dist/lib/jquery-2.1.4.js"></script>
+		<script src="jquery-weui-build/dist/js/jquery-weui.min.js"></script>
+		<script src="jquery-weui-build/dist/js/swiper.min.js"></script>
+		<script src="jquery-weui-build/dist/lib/fastclick.js"></script>
+<script>
+	function check(){
+		var form = document.getElementsByClassName("weui-input");	
+		for (var i = 0; i <= form.length-1; i++){
+			if(form[i].value === ""){
+				$.alert("填写信息不完整！", "错误！", function(){
+					form[i].focus();
+				});
+				break;
+			}
+		}
+	
+	}
+</script>
+</body>
+</html>
