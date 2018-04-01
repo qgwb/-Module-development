@@ -41,7 +41,7 @@
 
 
 <?php
-@ $db=mysqli_connect('localhost','root','123456','lanou');
+@ $db=mysqli_connect('106.14.177.245','root','31501370','lanou');
 if(mysqli_connect_errno()){
     echo "ERROR connect";
     exit;
@@ -98,10 +98,7 @@ mysqli_close($db);
                 x[i].style.color = "#00dc00";
             }
         }
-
-
     }
-
 </script>
 </body>
 </html>
