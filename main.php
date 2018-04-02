@@ -5,10 +5,10 @@
  * Date: 2018/3/28 0028
  * Time: 下午 8:36
  */
-$servername = "localhost";
+$servername = "106.14.177.245";
 $username = "root";
-$password = "123456";
-$database = "hpy";
+$password = "31501370";
+$database = "lanou";
 
 $db=mysqli_connect($servername,$username,$password,$database);
 $result = mysqli_query($db,"select * from type");
@@ -64,9 +64,9 @@ echo '<!DOCTYPE html>
     			<div class="weui-grids">';
 for($i=0;$i<$rownum;$i++) {
     $row = mysqli_fetch_assoc($result);
-    echo '<a href="conn.php?typeid=' . $row['Type_id'] . '" class="weui-grid js_grid">
+    echo '<a href="conn.php?typeid=' . $row['Type_ID'] . '" class="weui-grid js_grid">
         			<div class="weui-grid__icon">
-          				<img src="img/' . $row['Type_id'] . '.png" alt="">
+          				<img src="img/' . $row['Type_ID'] . '.png" alt="">
         			</div>
         			<p class="weui-grid__label">' . $row['Type_name'] . '</p>
       				</a>';

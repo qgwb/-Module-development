@@ -64,12 +64,10 @@
 						$(document).on("click", "#continue", function() {
 							for (var i = 0; i < $(".weui-check").length; i++ ){
 								if($(".weui-check").get(i).checked == true){
-//									console.log($(".weui-check").get(i).checked);
-//									console.log($(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML);
                                     var sessionkey = $(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML;
                                     var sessionval = localStorage.getItem($(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML);
-//                                    console.log(localStorage.getItem($(".weui-check").parents('.weui-cell').find('h6').get(i).innerHTML));
-									sessionStorage.setItem(sessionkey,sessionval);
+                                    sessionStorage.setItem(sessionkey, sessionval);
+
 								}
 							}
 						});

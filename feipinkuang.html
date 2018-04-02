@@ -78,13 +78,13 @@
 
 	        <!--</label>-->
     	</div>
-    	<div class="weui-cell" style="position: fixed;bottom: 53px; width: 100%;background-color: #10AEFF;">
+    	<div class="weui-cell" style="position: fixed;bottom: 53px; width: 100%;background-color: #8699A4;">
             <div class="weui-cell__bd">
               <div class="weui-cell">
                 <div class="button_sp_area" style="position: fixed;left: 20px; margin-top: 3px;">
 				    <a href="javascript:;" id="allcheck" class="weui-btn weui-btn_mini weui-btn_default">全选</a>
 				</div>
-				<div class="button_sp_area" style="position: fixed;right: 20px; margin-top: 3px;"> 
+				<div class="button_sp_area" style="position: fixed;right: 20px; margin-top: 3px;">
 				    <!--<input type="submit" href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" value="下一步">-->
                     <a href="javascript:;" id="continue" class="weui-btn weui-btn_mini weui-btn_primary">下一步</a>
 				</div>
@@ -100,14 +100,6 @@
     			FastClick.attach(document.body);
   			});
 		</script>
-		<script>
-	      	$('#feipinkuang').pullToRefresh().on('pull-to-refresh', function (done) {
-	        	var self = this
-	        	setTimeout(function() {
-	        	  $(self).pullToRefreshDone();
-	       		 }, 1000)
-	     	 })
-	    </script>
 	    <!--<script>
 	    	var iSelect = true;
 	    	$(document).on("click", "#allcheck", function() {
@@ -135,31 +127,34 @@
 	    </script>-->
 	    <script>
 	    	for(var i = 0; i < localStorage.valueOf().length; i++){
-				var str = JSON.parse(localStorage.getItem(localStorage.key(i)));
-	    		var labela1=`<div class="weui-cell weui-cell_swiped weui-cells_checkbox">
-          		<div class="weui-cell__bd">
-              	<label class="weui-cell weui-check__label" for="s${i}">
-              	<div class="weui-cell__hd">
-	        		<input type="checkbox" class="weui-check" name="checkbox1" id="s${i}">
-	            	<i class="weui-icon-checked"></i>
-	          	</div>
-                <div class="weui-cell__bd">
-                	<h3>${str.Typedetail_name}</h3>
-	            	<p>单价：${str.Typedetail_price}元/${str.Typedetail_unit}</p>
-	                <p>数量：${str.count}${str.Typedetail_unit}</p>
-	                <h6 hidden="hidden">${localStorage.key(i)}</h6>
-                </div>
-                <div class="weui-cell__ft">
-                    <span style="color: red">预估价：¥${str.Order_money}</span>
-                </div>
-                </label>
-				</div>
-	            <div class="weui-cell__ft">
-	              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
-	              <a class="weui-swiped-btn weui-swiped-btn_default close-swipeout" href="javascript:">关闭</a>
-	            </div>
-            </div>`;
-				$('#a12').append(labela1);
+//				console.log(localStorage.key(i));
+				if(localStorage.key(i) > 3000 && localStorage.key(i) < 3155) {
+					var str = JSON.parse(localStorage.getItem(localStorage.key(i)));
+					var labela1 = `<div class="weui-cell weui-cell_swiped weui-cells_checkbox">
+					<div class="weui-cell__bd">
+					<label class="weui-cell weui-check__label" for="s${i}">
+					<div class="weui-cell__hd">
+						<input type="checkbox" class="weui-check" name="checkbox1" id="s${i}">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<h3>${str.Typedetail_name}</h3>
+						<p>单价：${str.Typedetail_price}元/${str.Typedetail_unit}</p>
+						<p>数量：${str.count}${str.Typedetail_unit}</p>
+						<h6 hidden="hidden">${localStorage.key(i)}</h6>
+					</div>
+					<div class="weui-cell__ft">
+						<span style="color: red">预估价：¥${str.Order_money}</span>
+					</div>
+					</label>
+					</div>
+					<div class="weui-cell__ft">
+					  <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+					  <a class="weui-swiped-btn weui-swiped-btn_default close-swipeout" href="javascript:">关闭</a>
+					</div>
+				</div>`;
+					$('#a12').append(labela1);
+				}
 //				console.log(localStorage.key(i) + "：" + localStorage.getItem(localStorage.key(i)));
 			}
 			$('.weui-cell_swiped').swipeout()
@@ -173,7 +168,7 @@
 				$('.close-swipeout').click(function () {
 		        $(this).parents('.weui-cell').swipeout('close')
 		    })
-	    	
+
 	    </script>
 	</body>
 </html>

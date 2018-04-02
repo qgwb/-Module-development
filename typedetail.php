@@ -5,10 +5,10 @@
  * Date: 2018/3/28 0028
  * Time: 下午 9:07
  */
-$servername = "localhost";
+$servername = "106.14.177.245";
 $username = "root";
-$password = "123456";
-$database = "hpy";
+$password = "31501370";
+$database = "lanou";
 
 $db=mysqli_connect($servername,$username,$password,$database);
 if(mysqli_connect_errno()){
@@ -16,7 +16,7 @@ if(mysqli_connect_errno()){
     exit;
 }
 $typedetailid = $_GET['typedetailid'];
-$result = mysqli_query($db,"select * from typedetail where Typedetail_id = ".$typedetailid);
+$result = mysqli_query($db,"select * from typedetail where Typedetail_ID = ".$typedetailid);
 $rownum=mysqli_num_rows($result);
 echo '<!DOCTYPE html>
 <html>
@@ -79,7 +79,7 @@ echo '<a href="javascript:;" class="weui-btn weui-btn_primary" style="margin: 20
               text: "废品已成功添加到废品框啦！",
               buttons: [
                 { text: "返回上一页",onClick: function(){ window.history.back(-1); } },
-                { text: "回到主页", onClick: function(){ window.location.href = "tabbar.html" ;} },
+                { text: "确定" },
   ]
             });
         }
