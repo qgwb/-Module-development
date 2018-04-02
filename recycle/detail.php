@@ -182,7 +182,7 @@ echo '<div class="weui-cells">
         $.confirm("确认提交订单", function() {
             //点击确认后的回调函数
             $.get("addorder.php?Orderid="+Orderid+"&rowid="+rowid+"&number="+allnum+"&price="+tprice,function(){
-            window.location.href="reindex.php";
+            window.location.href="reindex.html";
 });
         }, function() {
             //点击取消后的回调函数
