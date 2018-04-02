@@ -43,11 +43,13 @@
         $number[$i]=(double)$number[$i];
         $rowid[$i]=(string)$rowid[$i];
     }
+
+
     $sql="update order1 set Order_money=".$price." , Order_state='交易成功' where Order_ID=".$Orderid;
     for($i=0;$i<count($number);$i++){
         $a=$number[$i];
         $b=$rowid[$i];
-        $sq2="update order_type set count1=".$a."where Typedetail_ID=".$b;
+        $sq2="update order_type set count1= $a where Typedetail_ID= $b and Order_ID =$Orderid";
         $result=mysqli_query($db,$sq2);
     }
    $res=mysqli_query($db,$sql);
