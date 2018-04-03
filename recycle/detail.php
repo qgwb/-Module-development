@@ -146,14 +146,14 @@ echo '<div class="weui-cells">
         $(\'#re-name\').append("<p>"+ recylename[i]+"</p>");
         $(\'#re-weight\').append("<p><input type=\'number\' class=\'weui-input\' value=\'"+weight[i]+"\'></p>");
     }
-    var price=0;
+    var price=0.00;
     for(var i=0;i<num;i++) {
         price=price+weight[i]*rowprice[i];
     }
     for(var i=0;i<num;i++) {
         allnum[i]=weight[i];
     }
-    price=price.toFixed(1);
+    price=price.toFixed(2);
     var tprice=price;
     $(\'#all-price\').text("¥"+price);
     $(function(){
@@ -162,7 +162,7 @@ echo '<div class="weui-cells">
             var obj = $(\'input\');
             function out() {
 
-                var pric1=0;
+                var pric1=0.00;
                 tprice=0;
                 $.each(obj, function (key, val) {
                     if(obj[key].value!="")
@@ -176,7 +176,7 @@ echo '<div class="weui-cells">
             $(\'#all-price\').text("¥"+out().toFixed(1));
         });
 
-    })
+    });
 
      $(document).on("click", "#btn1", function() {
         $.confirm("确认提交订单", function() {
