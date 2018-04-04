@@ -48,7 +48,7 @@
     echo "ERROR connect";
     exit;
     }
-    $sql="select * from order1 where Order_state='交易成功'";
+    $sql="select * from `order` where Order_state='交易成功'";
     $result=mysqli_query($db,$sql);
    while($row=mysqli_fetch_assoc($result)){
        echo '<div class="weui-cells">

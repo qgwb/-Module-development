@@ -49,7 +49,7 @@
     for($i=0;$i<count($number);$i++){
         $a=$number[$i];
         $b=$rowid[$i];
-        $sq2="update order_type set count1= $a where Typedetail_ID= $b and Order_ID =$Orderid";
+        $sq2="update order_type set `count`= $a where Typedetail_ID= $b and Order_ID =$Orderid";
         $result=mysqli_query($db,$sq2);
     }
    $res=mysqli_query($db,$sql);

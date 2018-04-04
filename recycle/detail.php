@@ -32,7 +32,7 @@ if(mysqli_connect_errno()){
     exit;
 }
 $Orderid = $_GET["Order_ID"];
-$sql="select * from order1 where Order_ID=".$Orderid;
+$sql="select * from `order` where Order_ID=".$Orderid;
 $result=mysqli_query($db,$sql);
 $row=mysqli_fetch_assoc($result);
 $citid=$row["Cit_ID"];
@@ -46,7 +46,7 @@ $num=array();
 $rownum=mysqli_num_rows($resultre);
 for($i=0;$i<$rownum;$i++){
     $rowre = mysqli_fetch_assoc($resultre);
-    $num[$i]=(int)$rowre["count1"];
+    $num[$i]=(int)$rowre["count"];
     $rowid[$i]=$rowre["Typedetail_ID"];
     $rs=mysqli_query($db,"select * from typedetail where Typedetail_id=".$rowre["Typedetail_ID"]);
     $ro=mysqli_fetch_assoc($rs);
@@ -153,7 +153,7 @@ echo '<div class="weui-cells">
     for(var i=0;i<num;i++) {
         allnum[i]=weight[i];
     }
-    price=price.toFixed(2);
+    price=price.toFixed(1);
     var tprice=price;
     $(\'#all-price\').text("¥"+price);
     $(function(){
@@ -162,7 +162,7 @@ echo '<div class="weui-cells">
             var obj = $(\'input\');
             function out() {
 
-                var pric1=0.00;
+                var pric1=0;
                 tprice=0;
                 $.each(obj, function (key, val) {
                     if(obj[key].value!="")
@@ -176,7 +176,7 @@ echo '<div class="weui-cells">
             $(\'#all-price\').text("¥"+out().toFixed(1));
         });
 
-    });
+    })
 
      $(document).on("click", "#btn1", function() {
         $.confirm("确认提交订单", function() {
