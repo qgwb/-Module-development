@@ -1,22 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/4/1 0001
- * Time: 下午 2:32
- */
-require_once('weixin.class.php');
-$weixin = new class_weixin();
-
-if (!isset($_GET["code"])){
-    $redirect_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    $jumpurl = $weixin->oauth2_authorize($redirect_url, "snsapi_userinfo", "123");
-    Header("Location: $jumpurl");
-}else{
-    $access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
-    $userinfo = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
-}
-?>
+///**
+// * Created by PhpStorm.
+// * User: Administrator
+// * Date: 2018/4/1 0001
+// * Time: 下午 2:32
+// */
+//require_once('weixin.class.php');
+//$weixin = new class_weixin();
+//
+//if (!isset($_GET["code"])){
+//    $redirect_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+//    $jumpurl = $weixin->oauth2_authorize($redirect_url, "snsapi_userinfo", "123");
+//    Header("Location: $jumpurl");
+//}else{
+//    $access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
+//    $userinfo = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
+//}
+//?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +25,14 @@ if (!isset($_GET["code"])){
     <title></title>
     <link rel="stylesheet" type="text/css" href="jquery-weui-build/dist/lib/weui.min.css">
     <link rel="stylesheet" type="text/css" href="jquery-weui-build/dist/css/jquery-weui.min.css">
+    <script>
+        window.addEventListener('pageshow', function(e) {
+            // 通过persisted属性判断是否存在 BF Cache
+            if (e.persisted) {
+                location.reload();
+            }
+        });
+    </script>
 </head>
 <body>
 <div class="weui-tab">
@@ -55,7 +63,7 @@ if (!isset($_GET["code"])){
 <script src="jquery-weui-build/dist/js/swiper.min.js"></script>
 <script src="jquery-weui-build/dist/lib/fastclick.js"></script>
 <script>
-    localStorage.setItem(openid,<?php echo $userinfo["openid"];?>);
+//    localStorage.setItem(openid,<?php //echo $userinfo["openid"];?>//);
     $("#tab1").load("main.php");
     $("#tab2").load("feipinkuang.html");
     var iSelect = true;

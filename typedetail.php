@@ -78,16 +78,15 @@ echo '<a href="javascript:;" class="weui-btn weui-btn_primary" style="margin: 20
               title: "添加成功",
               text: "废品已成功添加到废品框啦！",
               buttons: [
-                { text: "返回上一页",onClick: function(){ window.history.back(-1); } },
-                { text: "确定" },
-  ]
+               { text: "返回上一页",onClick: function(){ window.history.go(-1); } },
+               { text: "回到主页" ,onClick: function(){ window.history.go(-2); }},
+               ]
             });
         }
         else{
             $.toast(\'请输入数量!\', \'cancel\');
         }
-
-      })
+         })
   </script>
 
   </body>
