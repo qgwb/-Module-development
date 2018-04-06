@@ -63,7 +63,7 @@ if (!isset($_GET["code"])){
 <script src="jquery-weui-build/dist/js/swiper.min.js"></script>
 <script src="jquery-weui-build/dist/lib/fastclick.js"></script>
 <script>
-    localStorage.setItem(openid,<?php echo $userinfo["openid"];?>);
+    localStorage.setItem(“openid”,“<?php echo $userinfo["openid"];?>”);
     $("#tab1").load("main.php");
     $("#tab2").load("feipinkuang.html");
     var iSelect = true;
