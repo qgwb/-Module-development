@@ -48,7 +48,8 @@ $database = "lanou";
     echo "ERROR connect";
     exit;
     }
-    $sql="select * from `order` where Order_state='交易成功'";
+    $openid='<script>localStorage.getItem("openid");</script>';
+    $sql="select * from `order` where Order_state='交易成功' and Rec_ID='$openid'";
     $result=mysqli_query($db,$sql);
    while($row=mysqli_fetch_assoc($result)){
        echo '<div class="weui-cells">
