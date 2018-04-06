@@ -39,9 +39,9 @@
 <body>
 
 <?php
-$servername = "localhost";
+$servername = "106.14.177.245";
 $username = "root";
-$password = "123456";
+$password = "31501370";
 $database = "lanou";
 
 $db=mysqli_connect($servername,$username,$password,$database);

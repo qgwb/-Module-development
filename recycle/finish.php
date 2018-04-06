@@ -38,10 +38,10 @@
 </head>
 <body>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "123456";
-    $database = "lanou";
+$servername = "106.14.177.245";
+$username = "root";
+$password = "31501370";
+$database = "lanou";
 
     $db=mysqli_connect($servername,$username,$password,$database);
     if(mysqli_connect_errno()){
