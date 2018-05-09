@@ -1,2 +1,2 @@
-# -Web-development
-此库用于开发资源管理平台项目-web管理平台开发
+# -Model-development
+此库用于智源回收平台项目-用户中心模块开发
